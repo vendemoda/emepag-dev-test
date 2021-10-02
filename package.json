@@ -1,0 +1,31 @@
+{
+  "name": "vendemoda-software-challenge",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "Alcides Bezerra",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register --respawn --ignore-watch node_modules --no-notify src/index.ts",
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
+    "start": "NODE_ENV=production node dist/src/index.js",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm",
+    "typeorm:sync": "yarn typeorm schema:sync",
+    "typeorm:drop": "yarn typeorm schema:drop",
+    "typeorm:reset": "yarn typeorm:drop && yarn typeorm:sync"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "ts-node": "^10.2.0",
+    "tsc-alias": "^1.3.8",
+    "tsconfig-paths": "^3.10.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.6",
+    "ts-node-dev": "^1.1.8",
+    "tsc": "^2.0.3",
+    "typescript": "^4.3.5"
+  }
+}
